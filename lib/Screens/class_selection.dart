@@ -1,3 +1,4 @@
+import 'package:dnd_character_creator/Widgets/wood_elf_data.dart';
 import 'package:flutter/material.dart';
 import 'package:dnd_character_creator/Widgets/button_with_padding.dart';
 import 'package:dnd_character_creator/Data/class_data.dart';
@@ -53,20 +54,7 @@ class _ClassSelectionState extends State<ClassSelection> {
             child: SizedBox(
               height: 350,
               width: 350,
-              child: Column(
-                children: [
-                  Text(ClassData['Wood Elf']?['description']),
-                  Text('Speed: ${ClassData['Wood Elf']?['speed']}'),
-                  Text('Size: ${ClassData['Wood Elf']?['size']}'),
-                  Text('Vision: ${ClassData['Wood Elf']?['vision']}'),
-                  Text(
-                      'Languages: ${ClassData['Wood Elf']?['languages'].join(", ")}'),
-                  Text(
-                      'Ability Score Increase: Dexterity +${ClassData['Wood Elf']?['abilityScoreIncrease']['Dexterity']}, Wisdom +${ClassData['Wood Elf']?['abilityScoreIncrease']['Wisdom']}'),
-                  Text(
-                      'Traits: ${ClassData['Wood Elf']?['traits'].join(", ")}'),
-                ],
-              ),
+              child: SingleChildScrollView(child: WoodElfData()),
             ),
           )
         ],
