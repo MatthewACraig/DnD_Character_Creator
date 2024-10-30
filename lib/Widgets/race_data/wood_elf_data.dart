@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:dnd_character_creator/Data/class_data.dart';
+import 'package:dnd_character_creator/Data/race_data.dart';
 
 class WoodElfData extends StatelessWidget {
   const WoodElfData({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class WoodElfData extends StatelessWidget {
 
           // Description
           Text(
-            ClassData['Wood Elf']?['description'] ?? '',
+            RaceData['Wood Elf']?['description'] ?? '',
             style: const TextStyle(
               fontSize: 16,
               color: Colors.black87,
@@ -34,22 +34,22 @@ class WoodElfData extends StatelessWidget {
           // Attributes with labels and icons
           _buildAttributeRow(
             label: 'Speed',
-            value: ClassData['Wood Elf']?['speed'] ?? '',
+            value: RaceData['Wood Elf']?['speed'] ?? '',
             icon: Icons.directions_run,
           ),
           _buildAttributeRow(
             label: 'Size',
-            value: ClassData['Wood Elf']?['size'] ?? '',
+            value: RaceData['Wood Elf']?['size'] ?? '',
             icon: Icons.straighten,
           ),
           _buildAttributeRow(
             label: 'Vision',
-            value: ClassData['Wood Elf']?['vision'] ?? '',
+            value: RaceData['Wood Elf']?['vision'] ?? '',
             icon: Icons.visibility,
           ),
           _buildAttributeRow(
             label: 'Languages',
-            value: (ClassData['Wood Elf']?['languages'] as List<dynamic>?)
+            value: (RaceData['Wood Elf']?['languages'] as List<dynamic>?)
                     ?.join(', ') ??
                 '',
             icon: Icons.language,
@@ -68,8 +68,8 @@ class WoodElfData extends StatelessWidget {
             ),
           ),
           Text(
-            'Dexterity +${ClassData['Wood Elf']?['abilityScoreIncrease']['Dexterity']}, '
-            'Wisdom +${ClassData['Wood Elf']?['abilityScoreIncrease']['Wisdom']}',
+            'Dexterity +${RaceData['Wood Elf']?['abilityScoreIncrease']['Dexterity']}, '
+            'Wisdom +${RaceData['Wood Elf']?['abilityScoreIncrease']['Wisdom']}',
             style: const TextStyle(
               fontSize: 14,
               color: Colors.black87,
@@ -90,7 +90,7 @@ class WoodElfData extends StatelessWidget {
             ),
           ),
           Text(
-            (ClassData['Wood Elf']?['traits'] as List<dynamic>?)?.join(', ') ??
+            (RaceData['Wood Elf']?['traits'] as List<dynamic>?)?.join(', ') ??
                 '',
             style: const TextStyle(
               fontSize: 14,

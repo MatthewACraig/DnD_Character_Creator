@@ -45,13 +45,13 @@ class _ClassSelectionState extends State<ClassSelection> {
               ButtonWithPadding(onPressed: () {}, textContent: 'Wizard'),
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Container(
             decoration: BoxDecoration(
               border: Border.all(color: Colors.black),
               borderRadius: BorderRadius.circular(10),
             ),
-            child: SizedBox(
+            child: const SizedBox(
               height: 350,
               width: 350,
               child: SingleChildScrollView(child: WoodElfData()),
