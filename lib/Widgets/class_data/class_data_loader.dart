@@ -80,8 +80,8 @@ class _ClassDataWidgetState extends State<ClassDataWidget> {
               ),
             ),
           ),
-          const Text(
-            'Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival',
+          Text(
+            "${ClassData[widget.className]?['skills'].join(', ') ?? ''}",
             style: TextStyle(
               fontSize: 14,
               color: Colors.black87,

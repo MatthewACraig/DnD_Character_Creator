@@ -1,7 +1,6 @@
 import 'package:dnd_character_creator/Widgets/class_data/class_data_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:dnd_character_creator/Widgets/button_with_padding.dart';
-import 'package:dnd_character_creator/Widgets/class_data/barbarian_data.dart';
 
 class ClassSelection extends StatefulWidget {
   const ClassSelection({Key? key}) : super(key: key);
@@ -11,6 +10,14 @@ class ClassSelection extends StatefulWidget {
 }
 
 class _ClassSelectionState extends State<ClassSelection> {
+  String selectedClassName = 'Sorcerer'; // Default class
+
+  void updateSelectedClass(String className) {
+    setState(() {
+      selectedClassName = className;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,18 +40,54 @@ class _ClassSelectionState extends State<ClassSelection> {
           const SizedBox(height: 20),
           Wrap(
             children: <Widget>[
-              ButtonWithPadding(onPressed: () {}, textContent: 'Barbarian'),
-              ButtonWithPadding(onPressed: () {}, textContent: 'Bard'),
-              ButtonWithPadding(onPressed: () {}, textContent: 'Cleric'),
-              ButtonWithPadding(onPressed: () {}, textContent: 'Druid'),
-              ButtonWithPadding(onPressed: () {}, textContent: 'Fighter'),
-              ButtonWithPadding(onPressed: () {}, textContent: 'Monk'),
-              ButtonWithPadding(onPressed: () {}, textContent: 'Paladin'),
-              ButtonWithPadding(onPressed: () {}, textContent: 'Ranger'),
-              ButtonWithPadding(onPressed: () {}, textContent: 'Rogue'),
-              ButtonWithPadding(onPressed: () {}, textContent: 'Sorcerer'),
-              ButtonWithPadding(onPressed: () {}, textContent: 'Warlock'),
-              ButtonWithPadding(onPressed: () {}, textContent: 'Wizard'),
+              ButtonWithPadding(
+                onPressed: () => updateSelectedClass('Barbarian'),
+                textContent: 'Barbarian',
+              ),
+              ButtonWithPadding(
+                onPressed: () => updateSelectedClass('Bard'),
+                textContent: 'Bard',
+              ),
+              ButtonWithPadding(
+                onPressed: () => updateSelectedClass('Cleric'),
+                textContent: 'Cleric',
+              ),
+              ButtonWithPadding(
+                onPressed: () => updateSelectedClass('Druid'),
+                textContent: 'Druid',
+              ),
+              ButtonWithPadding(
+                onPressed: () => updateSelectedClass('Fighter'),
+                textContent: 'Fighter',
+              ),
+              ButtonWithPadding(
+                onPressed: () => updateSelectedClass('Monk'),
+                textContent: 'Monk',
+              ),
+              ButtonWithPadding(
+                onPressed: () => updateSelectedClass('Paladin'),
+                textContent: 'Paladin',
+              ),
+              ButtonWithPadding(
+                onPressed: () => updateSelectedClass('Ranger'),
+                textContent: 'Ranger',
+              ),
+              ButtonWithPadding(
+                onPressed: () => updateSelectedClass('Rogue'),
+                textContent: 'Rogue',
+              ),
+              ButtonWithPadding(
+                onPressed: () => updateSelectedClass('Sorcerer'),
+                textContent: 'Sorcerer',
+              ),
+              ButtonWithPadding(
+                onPressed: () => updateSelectedClass('Warlock'),
+                textContent: 'Warlock',
+              ),
+              ButtonWithPadding(
+                onPressed: () => updateSelectedClass('Wizard'),
+                textContent: 'Wizard',
+              ),
             ],
           ),
           const SizedBox(height: 20),
@@ -56,7 +99,9 @@ class _ClassSelectionState extends State<ClassSelection> {
             child: SizedBox(
               height: 350,
               width: 350,
-              child: SingleChildScrollView(child: ClassDataWidget(className: 'Sorcerer',)),
+              child: SingleChildScrollView(
+                child: ClassDataWidget(className: selectedClassName),
+              ),
             ),
           ),
         ],
