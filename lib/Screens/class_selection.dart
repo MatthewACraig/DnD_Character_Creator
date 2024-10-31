@@ -1,7 +1,7 @@
-import 'package:dnd_character_creator/Widgets/wood_elf_data.dart';
+import 'package:dnd_character_creator/Widgets/class_data/class_data_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:dnd_character_creator/Widgets/button_with_padding.dart';
-import 'package:dnd_character_creator/Data/class_data.dart';
+import 'package:dnd_character_creator/Widgets/class_data/barbarian_data.dart';
 
 class ClassSelection extends StatefulWidget {
   const ClassSelection({Key? key}) : super(key: key);
@@ -16,8 +16,10 @@ class _ClassSelectionState extends State<ClassSelection> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-        title: const Text('Class Selection',
-            style: TextStyle(color: Colors.white)),
+        title: Text(
+          'Class Selection',
+          style: Theme.of(context).appBarTheme.titleTextStyle,
+        ),
       ),
       body: Column(
         children: [
@@ -51,12 +53,12 @@ class _ClassSelectionState extends State<ClassSelection> {
               border: Border.all(color: Colors.black),
               borderRadius: BorderRadius.circular(10),
             ),
-            child: const SizedBox(
+            child: SizedBox(
               height: 350,
               width: 350,
-              child: SingleChildScrollView(child: WoodElfData()),
+              child: SingleChildScrollView(child: ClassDataWidget(className: 'Sorcerer',)),
             ),
-          )
+          ),
         ],
       ),
     );
